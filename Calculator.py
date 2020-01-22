@@ -1,5 +1,6 @@
 # calculator.py
 
+import math
 
 def add(x, y):
     z = x + y
@@ -25,8 +26,13 @@ def divide(x, y):
     print("{} / {} = {}".format(x, y, z))
     return z
 
+def square_root(x):
+    import math
+    z = math.sqrt(x)
+    print("squareroot {} = {}".format(x, z))
+    return z
 
-print("you're going to input a letter for a calculator function --> a - add, s - subtract, m - multiply, d - divide")
+print("you're going to input a letter for a calculator function --> a - Add, s - Subtract, m - Multiply, d - Divide, r - Square Root")
 x = input("Enter a letter: ")
 num1 = input("Enter the first number you want to manipulate: ")
 num2 = input("Enter the first number you want to manipulate: ")
@@ -54,6 +60,12 @@ elif x == "m":
 
 elif x == "d":
     d = divide(num1, num2)
+    print(d)
+    if d == None:
+        print("I forgot a variable in add()")
+
+elif x == "r":
+    d = square_root(num1)
     print(d)
     if d == None:
         print("I forgot a variable in add()")
